@@ -1,0 +1,12 @@
+@import '@styles/theme.scss';
+
+.styled-root {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.styled-main {
+  overflow: auto;
+  min-height: 100vh;
+  padding: $header-height 32px 80px;
+}
