@@ -15,17 +15,17 @@ const Home = () => {
   const { search } = useLocation();
   const params = queryString.parse(search) as any; // TODO: change any
 
-  const { city = '' } = params;
+  const { city = '', units = 'imperial' } = params;
 
   const fetchData = useCallback(() => {
-    dispatch(searchWeather({ q: city }));
+    dispatch(searchWeather({ q: city, units }));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [city]);
+  }, [city, units]);
 
   useEffect(() => {
     fetchData();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [city]);
+  }, [city, units]);
 
   return (
     <>
